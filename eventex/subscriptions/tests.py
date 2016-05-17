@@ -3,8 +3,12 @@ from django.test import TestCase
 from eventex.subscriptions.forms import SubscriptionForm
 
 class SubscribeTest(TestCase):
+
+
     def setUp(self):
         self.resp = self.client.get('/inscricao/')
+
+
     def test_get(self):
         """Get /inscricao/ must return status code 200"""
         self.assertEqual(200, self.resp.status_code)
