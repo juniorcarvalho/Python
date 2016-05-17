@@ -2,6 +2,8 @@
 
 Sistema de Eventos curso WttD
 
+[![Code Health](https://landscape.io/github/juniorcarvalho/Python-wttd/master/landscape.svg?style=flat)](https://landscape.io/github/juniorcarvalho/Python-wttd/master)
+
 ## Como desenvolver?
 
 1. Clone o repositório.
