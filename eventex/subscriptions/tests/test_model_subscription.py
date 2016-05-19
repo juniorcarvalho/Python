@@ -6,7 +6,7 @@ from eventex.subscriptions.models import Subscription
 class SubscriptionModelTest(TestCase):
     def setUp(self):
         self.obj = Subscription(
-            name='Júnior',
+            name='Júnior Carvalho',
             cpf='12345678901',
             email='joseadolfojr@gmail.com',
             phone='21996016875'
@@ -19,3 +19,6 @@ class SubscriptionModelTest(TestCase):
     def test_created_at(self):
         '''Subscription must have an auto create_at'''
         self.assertIsInstance(self.obj.created_at, datetime)
+
+    def test_str(self):
+        self.assertEqual('Júnior Carvalho', str(self.obj))
