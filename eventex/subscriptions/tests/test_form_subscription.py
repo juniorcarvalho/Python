@@ -32,11 +32,16 @@ class SubscriptionFormTest(TestCase):
         self.assertListEqual([msg], errors_list)
 
     def make_validated_form(self, **kwargs):
-        valid = dict(name='Junior', cpf='12345678901',
+        valid = dict(name='Júnior Carvalho', cpf='12345678901',
                      email='joseadolfojr@gmail.com', phone='21996016875')
 
         data = dict(valid, **kwargs)
         form = SubscriptionForm(data)
         form.is_valid()
         return form
+
+    def test_name_must_be_capitalized(self):
+        """ Name must be caputalized """
+        form = self.make_validated_form(name='JÚNIOR carvalho')
+        self.assertEqual('Júnior Carvalho', form.cleaned_data['name'])
 
